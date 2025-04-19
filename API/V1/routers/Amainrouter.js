@@ -1,0 +1,28 @@
+const categories = require("./Categories.router")
+const Course = require("./Course.router")
+const Login = require("./Login.router")
+const Stcourse = require("./Stu_course.router")
+const review = require("./Rewview.router")
+const Topic = require("./Topic.router")
+const Question = require("./Question.router")
+const Answer = require("./Answers.router")
+const User = require("./User.router")
+const Assignment = require("./Assignment.router")
+const Submit = require("./submit.router")
+const Material = require("./Material.router")
+module.exports = (app) => {
+    const system = "/api/v1"
+    app.use(system + "/categories",categories) 
+    app.use(system + "/course",Course)
+    app.use(system + "/Login",Login)
+    app.use(system + "/stcourse",Stcourse)
+    app.use(system + "/review",review)
+    app.use(system + "/Topic",Topic)
+    app.use(system + "/Question",Question)
+    app.use(system + "/Answer",Answer)
+    app.use(system + "/User",User)
+    app.use(system + "/Assignment",Assignment)
+    app.use(system + "/submit",Submit)
+    app.use(system + "/Material",Material)
+
+}
