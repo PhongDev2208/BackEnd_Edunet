@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 
 const StudentSchema = new mongoose.Schema({
-  user_id: String, // Liên kết với bảng user
-  degree: { type: String }, // Bằng cấp
-  major: { type: String }, // Chuyên ngành
-  name: { type: String}, // Tên sinh viên
-  age: { type: Number }, // Tuổi sinh viên
-  deleted_at: { type: String }, // Ngày xoá
-  deleted_by: { type: String }, // Người xoá
-  created_at: { type: String }, // Người cập nhật
-  created_by: { type: String } // Người tạo
+  user_id: String,
+  degree: { type: String, required: true }, 
+  major: { type: String, required: true }, 
+  name: { type: String, required: true}, 
+  age: { type: Number, required: true },
+  deleted_at: { type: String }, 
+  deleted_by: { type: String }, 
+  created_at: { type: String }, 
+  created_by: { type: String } 
 }, {
   timestamps: true
 });

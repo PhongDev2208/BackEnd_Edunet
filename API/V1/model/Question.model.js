@@ -11,8 +11,8 @@ const QuestionSchema = new mongoose.Schema({
     correct_answers: Array, // Danh sách đáp án đúng
     updated_by: String,
     status: {
-        type : Boolean ,
-        default : true
+        type : Number ,
+        default : 1
     },
     updated_at: String,
     created_by: String,

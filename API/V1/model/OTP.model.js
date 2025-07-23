@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const OTPSchema = new mongoose.Schema({
-  token: String, // Liên kết với bảng user
+  id_user : String, // Liên kết với bảng user
   otp: { type: Number }, // Bằng cấp
   expireAt: { type: Date, default: Date.now, expires: 180 },
   deleted_at: { type: Date }, // Ngày xoá

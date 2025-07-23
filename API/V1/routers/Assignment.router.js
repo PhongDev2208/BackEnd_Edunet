@@ -1,10 +1,12 @@
 const express = require("express")
 const router = express.Router()
 const controller = require("../controller/Assignment.controller")
-const PrivateTea = require("../middleware/PrivateTea")
-const Private = require("../middleware/Private")
-router.post("/Post",PrivateTea.index,controller.Post)
-router.get("/Getall/:id",Private.index,controller.GetAll)
-router.get("/GetDetail/:id",Private.index,controller.GetDetail)
+const AuthenticationTea = require("../middleware/AuthenticationTea")
+const AuthenticationST = require("../middleware/AuthenticationST")
+
+router.get("/Getall/:id",AuthenticationST,controller.GetAll)
+router.get("/GetDetail/:id",AuthenticationST,controller.GetDetail)
+router.post("/Post",AuthenticationTea,controller.Post)
+
 module.exports = router
  

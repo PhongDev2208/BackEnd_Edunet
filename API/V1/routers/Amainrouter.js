@@ -14,7 +14,6 @@ module.exports = (app) => {
     const system = "/api/v1"
     app.use(system + "/categories",categories) 
     app.use(system + "/course",Course)
-    app.use(system + "/Login",Login)
     app.use(system + "/stcourse",Stcourse)
     app.use(system + "/review",review)
     app.use(system + "/Topic",Topic)

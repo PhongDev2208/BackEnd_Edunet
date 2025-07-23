@@ -15,8 +15,8 @@ const studentCourseSchema = new mongoose.Schema({
     required: true
   },
   status: {
-    type: String,
-    default: 'active'
+    type: Number,
+    default : 1
   },
   deleted_by: {
     type: String,
@@ -31,7 +31,7 @@ const studentCourseSchema = new mongoose.Schema({
     default: null
   },
   updated_at: {
-    type: Date,
+    type: String,
     default: null
   },
   created_by: {
@@ -39,8 +39,8 @@ const studentCourseSchema = new mongoose.Schema({
     default: null
   },
   created_at: {
-    type: Date,
-    default: Date.now
+    type: String,
+    default: null
   }
 });
 

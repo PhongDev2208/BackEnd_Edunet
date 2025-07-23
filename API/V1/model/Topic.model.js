@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const TopicSchema = new mongoose.Schema({
     title: String,
-    course_id: String, // Tham chiếu đến bảng Course
+    course_id: String, 
     Description : String,
     status: {
-        type : Boolean,
-        default : true
+        type : Number,
+        default : 1
     },
     date: String,
     created_at: String,

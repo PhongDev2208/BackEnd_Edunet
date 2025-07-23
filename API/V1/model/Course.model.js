@@ -58,7 +58,7 @@ const CourseSchema = new mongoose.Schema({
   },
   status_course : {
     type: Number,
-    default : 0
+    default : 1
   }, 
   img: [], // Array of strings for image URLs or paths
   price: Number,

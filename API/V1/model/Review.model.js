@@ -15,38 +15,37 @@ const reviewSchema = new mongoose.Schema({
     },
     rate: {
         type: Number,
-        min: 0,  // Điểm đánh giá tối thiểu
-        max: 5   // Điểm đánh giá tối đa (giả sử thang điểm 5)
+        min: 0,  
+        max: 5   
     },
     images: {
-        type: [String],  // Lưu danh sách URL hình ảnh
+        type: [String],  
     },
     date: {
         type: Date,
-        default: Date.now  // Ngày viết đánh giá (mặc định là ngày hiện tại)
+        default: Date.now  
     },
     deleted_by: {
-        type: String  // ID của người xóa review (nếu có)
+        type: String  
     },
     deleted_at: {
-        type: Date  // Thời gian xóa review
+        type: Date  
     },
     updated_by: {
-        type: String  // ID của người cập nhật review (nếu có)
+        type: String  
     },
     updated_at: {
         type: Date,
-        default: Date.now  // Thời gian cập nhật
+        default: Date.now 
     },
     created_by: {
-        type: String  // ID của người tạo review
+        type: String 
     },
     created_at: {
         type: String,
     }
 });
 
-// Tạo model từ schema
 const Review = mongoose.model('Review', reviewSchema,"Reviews");
 
-module.exports = Review;  // Sử dụng export default
+module.exports = Review;  

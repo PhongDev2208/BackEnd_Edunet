@@ -1,6 +1,5 @@
 const User = require("../model/User.model")
 const respond = require("../../../Helper/Object")
-respond.type = "login"
 module.exports.GetAll = async (req, res) => {
         const email = req.body.email
         const password = req.body.password

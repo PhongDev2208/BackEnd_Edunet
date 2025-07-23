@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
 const controller = require("../controller/Topic.controller")
-const PrivateRouter = require("../middleware/Private")
-router.get("/GetAll",PrivateRouter.index,controller.GetAll)
+const AuthenticationST = require("../middleware/AuthenticationST")
+router.get("/GetAll/:key",AuthenticationST,controller.GetAll)
 module.exports = router

@@ -1,11 +1,14 @@
 const mongoose = require('mongoose');
 const MaterialChildSchema  = new mongoose.Schema({
-    resource_id: { type: String }, // Liên kết với resource bằng ID số
+    resource_id: { type: String }, 
     title: { type: String },
-    status: { type: Number}, // 1 = active, 0 = inactive
+    status: {
+      type : Number ,
+      default : 1
+  },
     position: { type: Number },
-    file: { type: Array , default : null}, // Đường dẫn file hoặc nội dung file ở dạng string
-    Link: { type: String , default : null}, // Đường dẫn file hoặc nội dung file ở dạng string
+    file: { type: Array , default : null}, 
+    Link: { type: String , default : null}, 
     created_at: { type: String },
     deleted_at: { type: String },
     deleted_by: { type: String },
