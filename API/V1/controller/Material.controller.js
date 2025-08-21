@@ -104,7 +104,6 @@ module.exports.PostChildren = async (req, res) => {
 module.exports.GetAll = async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(id);
     if (!id || !mongoose.Types.ObjectId.isValid(id)) {
       return res.json({
         status: false,

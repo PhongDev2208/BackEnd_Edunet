@@ -139,13 +139,10 @@ module.exports.Post = async (req, res) => {
 module.exports.ConfirmOTP = async (req, res) => {
   try {
     const { otp } = req.body;
-    console.log(otp);
-    console.log(req.user.userId);
     const exists = await OTP.findOne({
       id_user: req.user.userId,
       otp: otp,
     });
-    console.log(exists);
     if (!exists) {
       return res.json({
         status: false,

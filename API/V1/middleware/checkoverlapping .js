@@ -4,16 +4,17 @@ const Course = require("../model/Course.model");
 
 module.exports = async (req, res, next) => {
   try {
-    const Data = await StudentCourse.find({
+    const studentCourses = await StudentCourse.find({
       student_id: req.user.userId,
     }).lean();
-    console.log(Data);
-    for (const item of Data) {
+    for (const item of studentCourses) {
       const course = await Course.findOne({ _id: item.course_id }).lean();
       item.course = course;
     }
 
-    const Database = Data.map((item) => item.course?.time).filter(Boolean); // bỏ null
+    const database = studentCourses
+      .map((item) => item.course?.time)
+      .filter(Boolean); // remove null
 
     const course = await Course.findOne({ _id: req.body.course_id }).lean();
     if (!course || !course.time) {
@@ -28,7 +29,7 @@ module.exports = async (req, res, next) => {
 
     const scheduleData = course.time;
 
-    const getOverlapPeriod = (course1, course2) => {
+    function getOverlapPeriod(course1, course2) {
       const start1 = moment(course1.start_time);
       const end1 = moment(course1.end_time);
       const start2 = moment(course2.start_time);
@@ -40,9 +41,9 @@ module.exports = async (req, res, next) => {
         return { overlapStart, overlapEnd };
       }
       return null;
-    };
+    }
 
-    const isDayAndTimeOverlap = (overlapDays, course1, course2) => {
+    function isDayAndTimeOverlap(overlapDays, course1, course2) {
       for (const day1 of course1.daysOfWeek) {
         if (overlapDays.includes(day1.Day)) {
           for (const day2 of course2.daysOfWeek) {
@@ -58,9 +59,9 @@ module.exports = async (req, res, next) => {
         }
       }
       return false;
-    };
+    }
 
-    for (const dbCourse of Database) {
+    for (const dbCourse of database) {
       const overlapPeriod = getOverlapPeriod(dbCourse, scheduleData);
       if (overlapPeriod) {
         const { overlapStart, overlapEnd } = overlapPeriod;
@@ -86,10 +87,10 @@ module.exports = async (req, res, next) => {
     }
 
     next();
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
     return res.json({
       status: false,
+      type: "Data",
       error: 500,
       message: "Lỗi server",
       data: [],

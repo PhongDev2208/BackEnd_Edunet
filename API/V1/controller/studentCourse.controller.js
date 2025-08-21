@@ -120,7 +120,6 @@ module.exports.GetStudent = async (req, res) => {
 module.exports.registerstudencourse = async (req, res) => {
   try {
     const { course_id } = req.body;
-    console.log(course_id);
     if (!course_id || !mongoose.Types.ObjectId.isValid(course_id)) {
       return res.json({
         status: false,
@@ -129,12 +128,10 @@ module.exports.registerstudencourse = async (req, res) => {
         data: null,
       });
     }
-    console.log("before check");
     const check = await StudentCourse.findOne({
       course_id: course_id,
       student_id: req.user.userId,
     });
-    console.log(check);
     if (check) {
       return res.json({
         status: false,
@@ -164,7 +161,6 @@ module.exports.registerstudencourse = async (req, res) => {
       data: null,
     });
   } catch (error) {
-    console.log(error);
     if (error.name == "MongoServerError") {
       return res.json({
         status: false,
@@ -248,8 +244,6 @@ module.exports.GetscheduleStudent = async (req, res) => {
         return item.course.time;
       })
     );
-
-    console.log(newData);
 
     return res.json({
       status: true,

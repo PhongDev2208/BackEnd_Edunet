@@ -103,7 +103,6 @@ module.exports.GetDetail = async (req, res) => {
     const assignment = await Assignment.findOne({
       _id: id,
     });
-    console.log(assignment);
     return res.json({
       status: true,
       type: "Assignment",

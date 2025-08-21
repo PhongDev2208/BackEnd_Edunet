@@ -46,7 +46,6 @@ module.exports.GetAll = async (req, res) => {
 module.exports.Post = async (req, res) => {
   try {
     const { title, Description, course_id, question } = req.body;
-    console.log(req.body);
     // const requiredFields = ["title", "description", "course_id", "question"];
     // const respondvalidate = validate.isValidRequest(req.body, requiredFields)
     // if (respondvalidate == false) {
