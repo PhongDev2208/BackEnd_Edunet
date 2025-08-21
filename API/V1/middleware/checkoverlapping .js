@@ -7,7 +7,7 @@ module.exports = async (req, res, next) => {
     const Data = await StudentCourse.find({
       student_id: req.user.userId,
     }).lean();
-    console.log(Data)
+    console.log(Data);
     for (const item of Data) {
       const course = await Course.findOne({ _id: item.course_id }).lean();
       item.course = course;

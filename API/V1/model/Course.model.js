@@ -27,7 +27,7 @@ const CourseSchema = new mongoose.Schema({
           Day : Number,
           hourstart : Number,
           hourend : Number
-        }
+        }-
       ]
     }
   ,
