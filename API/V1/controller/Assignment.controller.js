@@ -1,4 +1,4 @@
-const Assignment = require("../model/Assignment.model.js");
+const Assignment = require("../model/assignment.model.js");
 const mongoose = require("mongoose");
 
 const validate = require("../middleware/validate.js");

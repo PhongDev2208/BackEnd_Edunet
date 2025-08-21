@@ -1,6 +1,6 @@
 const moment = require("moment");
-const StudentCourse = require("../model/Student_course.model");
-const Course = require("../model/Course.model");
+const StudentCourse = require("../model/studentCourse.model");
+const Course = require("../model/course.model");
 
 module.exports = async (req, res, next) => {
   try {

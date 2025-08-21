@@ -1,49 +1,48 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const studentCourseSchema = new mongoose.Schema({
-
   course_id: {
     type: String,
-    required: true
+    required: true,
   },
   date_register: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   student_id: {
     type: String,
-    required: true
+    required: true,
   },
   status: {
     type: Number,
-    default : 1
+    default: 1,
   },
   deleted_by: {
     type: String,
-    default: null
+    default: null,
   },
   deleted_at: {
     type: Date,
-    default: null
+    default: null,
   },
   updated_by: {
     type: String,
-    default: null
+    default: null,
   },
   updated_at: {
     type: String,
-    default: null
+    default: null,
   },
   created_by: {
     type: String,
-    default: null
+    default: null,
   },
   created_at: {
     type: String,
-    default: null
-  }
+    default: null,
+  },
 });
 
-const StudentCourse = mongoose.model('StudentCourse', studentCourseSchema);
+const StudentCourse = mongoose.model("StudentCourse", studentCourseSchema);
 
 module.exports = StudentCourse;

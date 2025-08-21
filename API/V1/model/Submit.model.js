@@ -1,21 +1,19 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const SubmissionSchema = new mongoose.Schema({
-
   assignment_id: {
     type: String,
   },
   user_id: {
     type: String,
-
   },
   file_path: {
     type: String,
-    default : null
+    default: null,
   },
   submitted_at: {
-    type: String
-    },
+    type: String,
+  },
   content: {
     type: String,
   },

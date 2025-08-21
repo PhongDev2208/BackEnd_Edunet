@@ -1,8 +1,8 @@
 require("dotenv").config();
-const User = require("../model/User.model.js");
-const Student = require("../model/Student.model.js");
-const Teacher = require("../model/Teacher.model.js");
-const OTP = require("../model/OTP.model.js");
+const User = require("../model/user.model.js");
+const Student = require("../model/student.model.js");
+const Teacher = require("../model/teacher.model.js");
+const OTP = require("../model/otp.model.js");
 
 const helper = require("../../../Helper/helper.js");
 const jwt = require("jsonwebtoken");

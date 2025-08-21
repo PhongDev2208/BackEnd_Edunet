@@ -1,7 +1,7 @@
-const Review = require("../model/Review.model.js");
-const User = require("../model/User.model.js");
-const Student = require("../model/Student.model.js");
-const Teacher = require("../model/Teacher.model.js");
+const Review = require("../model/review.model.js");
+const User = require("../model/user.model.js");
+const Student = require("../model/student.model.js");
+const Teacher = require("../model/teacher.model.js");
 const mongoose = require("mongoose");
 
 const helper = require("../../../Helper/helper.js");

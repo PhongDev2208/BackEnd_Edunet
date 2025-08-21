@@ -1,5 +1,5 @@
-const User = require("../model/User.model");
-const respond = require("../../../Helper/Object");
+const User = require("../model/user.model");
+const respond = require("../../../Helper/object");
 
 module.exports.GetAll = async (req, res) => {
   try {

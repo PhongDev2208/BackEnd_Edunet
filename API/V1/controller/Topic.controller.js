@@ -1,4 +1,4 @@
-const Topic = require("../model/Topic.model");
+const Topic = require("../model/topic.model");
 const mongoose = require("mongoose");
 
 module.exports.GetAll = async (req, res) => {

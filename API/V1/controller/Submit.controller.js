@@ -1,6 +1,6 @@
-const Submit = require("../model/Submit.model.js");
-const User = require("../model/User.model.js");
-const Student = require("../model/Student.model.js");
+const Submit = require("../model/submit.model.js");
+const User = require("../model/user.model.js");
+const Student = require("../model/student.model.js");
 const mongoose = require("mongoose");
 
 const helper = require("../../../Helper/helper.js");

@@ -1,5 +1,5 @@
-const Material = require("../model/Material.model.js");
-const MaterialChild = require("../model/MaterialChild.model.js");
+const Material = require("../model/material.model.js");
+const MaterialChild = require("../model/materialChild.model.js");
 const mongoose = require("mongoose");
 
 const helper = require("../../../Helper/helper.js");

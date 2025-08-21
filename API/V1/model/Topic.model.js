@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
 
-const TopicSchema = new mongoose.Schema({
+const TopicSchema = new mongoose.Schema(
+  {
     title: String,
-    course_id: String, 
-    Description : String,
+    course_id: String,
+    Description: String,
     status: {
-        type : Number,
-        default : 1
+      type: Number,
+      default: 1,
     },
     date: String,
     created_at: String,
@@ -16,12 +17,14 @@ const TopicSchema = new mongoose.Schema({
     updated_at: String,
     updated_by: String,
     deleted: {
-        type: Boolean,
-        default: false
-    }
-}, {
+      type: Boolean,
+      default: false,
+    },
+  },
+  {
     timestamps: true,
-});
+  }
+);
 
 const Topic = mongoose.model("Topic", TopicSchema, "Topic");
 module.exports = Topic;

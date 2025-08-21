@@ -1,5 +1,5 @@
-const Answers = require("../model/Answers.model.js");
-const Question = require("../model/Question.model.js");
+const Answers = require("../model/answers.model.js");
+const Question = require("../model/question.model.js");
 const mongoose = require("mongoose");
 
 const helper = require("../../../Helper/helper.js");
