@@ -4,7 +4,7 @@ const TopicSchema = new mongoose.Schema(
   {
     title: String,
     course_id: String,
-    Description: String,
+    description: String,
     status: {
       type: Number,
       default: 1,
@@ -26,5 +26,5 @@ const TopicSchema = new mongoose.Schema(
   }
 );
 
-const Topic = mongoose.model("Topic", TopicSchema, "Topic");
+const Topic = mongoose.model("Topic", TopicSchema, "topics");
 module.exports = Topic;

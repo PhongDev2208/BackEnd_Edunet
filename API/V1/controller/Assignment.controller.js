@@ -22,8 +22,8 @@ module.exports.Post = async (req, res) => {
       description: description,
       time: time,
       course_id: courseId,
-      created_At: helper.timenow(),
-      Created_by: req.user.userId,
+      created_at: helper.timenow(),
+      created_by: req.user.userId,
     };
     const newAssignment = new Assignment(newObject);
     await newAssignment.save();

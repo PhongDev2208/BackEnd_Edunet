@@ -44,13 +44,13 @@ module.exports = async (req, res, next) => {
     }
 
     function isDayAndTimeOverlap(overlapDays, course1, course2) {
-      for (const day1 of course1.daysOfWeek) {
-        if (overlapDays.includes(day1.Day)) {
-          for (const day2 of course2.daysOfWeek) {
-            if (day1.Day === day2.Day) {
+      for (const day1 of course1.days_of_week) {
+        if (overlapDays.includes(day1.day)) {
+          for (const day2 of course2.days_of_week) {
+            if (day1.day === day2.day) {
               if (
-                day1.hourstart < day2.hourend &&
-                day1.hourend > day2.hourstart
+                day1.hour_start < day2.hour_endd &&
+                day1.hour_end > day2.hour_start
               ) {
                 return true;
               }

@@ -3,7 +3,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const database = require("./config/database");
-const routerv1 = require("./API/V1/routers/Amainrouter");
+const routerv1 = require("./API/V1/routers/main.router");
 
 dotenv.config();
 database.connect();

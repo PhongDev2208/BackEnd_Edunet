@@ -45,7 +45,7 @@ module.exports.GetAll = async (req, res) => {
 
 module.exports.Post = async (req, res) => {
   try {
-    const { title, Description, course_id, question } = req.body;
+    const { title, description, course_id, question } = req.body;
     // const requiredFields = ["title", "description", "course_id", "question"];
     // const respondvalidate = validate.isValidRequest(req.body, requiredFields)
     // if (respondvalidate == false) {
@@ -58,7 +58,7 @@ module.exports.Post = async (req, res) => {
     // }
     const newTopic = {
       title: title,
-      Description: Description,
+      description: description,
       course_id: course_id,
       date: helper.timenow(),
     };

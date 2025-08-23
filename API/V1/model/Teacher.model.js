@@ -6,7 +6,7 @@ const TeacherSchema = new mongoose.Schema({
   cv: { type: Array, required: true },
   rate: { type: Number, default: 0 },
   status: { type: String, default: false },
-  SEO: { type: Number, default: 0 },
+  seo: { type: Number, default: 0 },
   degree: { type: String, required: true },
   major: { type: String, require: true },
   name: { type: String, required: true },

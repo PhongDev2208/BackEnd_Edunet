@@ -54,8 +54,8 @@ module.exports.Post = async (req, res) => {
 
 module.exports.PostChildren = async (req, res) => {
   try {
-    const { resource_id, title, Link, position, file } = req.body;
-    const requiredFields = ["resource_id", "title", "Link", "position", "file"];
+    const { resource_id, title, link, position, file } = req.body;
+    const requiredFields = ["resource_id", "title", "link", "position", "file"];
     const respondValidate = validate.isValidRequest(req.body, requiredFields);
     if (respondValidate == false) {
       return res.json({
@@ -68,7 +68,7 @@ module.exports.PostChildren = async (req, res) => {
     const childObject = {
       resource_id: resource_id,
       title: title,
-      Link: Link,
+      link: link,
       position: position,
       file: file,
       created_at: helper.timenow(),

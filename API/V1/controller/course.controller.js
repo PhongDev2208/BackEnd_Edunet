@@ -80,7 +80,7 @@ module.exports.Post = async (req, res) => {
     const newObject = {
       title: title,
       description: description,
-      Goal: goal,
+      goal: goal,
       schedule: schedule,
       time: time,
       numberlesson: parseInt(numberlesson),
@@ -88,8 +88,8 @@ module.exports.Post = async (req, res) => {
       categoryid: categoryid,
       img: img,
       price: parseInt(price),
-      teacherId: req.user.userId,
-      Quantity: parseInt(quantity),
+      teacherid: req.user.userId,
+      quantity: parseInt(quantity),
       created_at: helper.timenow(),
       created_by: req.user.userId,
     };
@@ -123,7 +123,7 @@ module.exports.GetCourseTea = async (req, res) => {
   try {
     const { key, status } = req.query;
     const filter = {
-      teacherId: req.user.userId,
+      teacherid: req.user.userId,
     };
     if (status != "null" && status != null) {
       filter.status_course = status;
@@ -184,7 +184,7 @@ module.exports.Getdetail = async (req, res) => {
     }
 
     const userInfo = await User.findOne({
-      _id: courseData.teacherId,
+      _id: courseData.teacherid,
     }).select("_id");
 
     if (!userInfo) {
@@ -214,16 +214,16 @@ module.exports.Getdetail = async (req, res) => {
     const dayList = [];
     const hourList = [];
 
-    if (courseData.time?.daysOfWeek?.length) {
-      for (const item of courseData.time.daysOfWeek) {
-        const newday = `Day ${item.Day + 1}`;
-        const newhour = `${item.hourstart}h - ${item.hourend}h`;
+    if (courseData.time?.days_of_week?.length) {
+      for (const item of courseData.time.days_of_week) {
+        const newday = `Day ${item.day + 1}`;
+        const newhour = `${item.hour_start}h - ${item.hour_end}h`;
         dayList.push(newday);
         hourList.push(newhour);
       }
     }
 
-    courseData.Day = dayList;
+    courseData.day = dayList;
     courseData.Hour = hourList;
 
     return res.json({
@@ -245,7 +245,7 @@ module.exports.Getdetail = async (req, res) => {
 module.exports.GetSchedule = async (req, res) => {
   try {
     const dataCourse = await Course.find({
-      teacherId: req.user.userId,
+      teacherid: req.user.userId,
     }).lean();
     const scheduleData = await Promise.all(
       dataCourse.map(async (item) => {
@@ -327,15 +327,15 @@ module.exports.EditCourse = async (req, res) => {
     const newObject = {
       title: title,
       description: description,
-      Goal: goal,
+      goal: goal,
       schedule: schedule,
       time: time,
       numberlesson: parseInt(numberlesson),
       public: public,
       categoryid: categoryid,
       price: parseInt(price),
-      teacherId: req.user.userId,
-      Quantity: parseInt(quantity),
+      teacherid: req.user.userId,
+      quantity: parseInt(quantity),
       updated_at: helper.timenow(),
       updated_by: req.user.userId,
     };

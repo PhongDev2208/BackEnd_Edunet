@@ -1,10 +1,10 @@
-const express = require("express")
-const router = express.Router()
-const controller = require("../controller/User.controller")
-const AuthenticationST = require("../middleware/AuthenticationST")
-router.get("/Getdetail",AuthenticationST,controller.Getdetail)
-router.post("/Post/student",controller.Post)
-router.post("/Post/teacher",controller.PostTeacher)
-router.post("/login",controller.login)
-router.post("/confirmOTP", AuthenticationST,controller.ConfirmOTP)
-module.exports = router
+const express = require("express");
+const router = express.Router();
+const controller = require("../controller/User.controller");
+const authenticationStudent = require("../middleware/authenticationStudent");
+router.get("/Getdetail", authenticationStudent, controller.Getdetail);
+router.post("/Post/student", controller.Post);
+router.post("/Post/teacher", controller.PostTeacher);
+router.post("/login", controller.login);
+router.post("/confirmOTP", authenticationStudent, controller.ConfirmOTP);
+module.exports = router;

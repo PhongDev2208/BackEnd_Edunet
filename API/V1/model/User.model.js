@@ -12,8 +12,8 @@ const UserSchema = new mongoose.Schema({
   deleted_by: { type: String, default: null },
   updated_at: { type: String, default: null },
   updated_by: { type: String, default: null },
-  createdat: { type: String },
+  created_at: { type: String },
 });
 
-const User = mongoose.model("User", UserSchema, "User");
+const User = mongoose.model("User", UserSchema, "users");
 module.exports = User;

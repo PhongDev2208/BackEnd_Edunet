@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 
-const AnswersSchema = new mongoose.Schema(
+const AnswerSchema = new mongoose.Schema(
   {
-    userid_id: {
+    userid: {
       type: String, // Tham chiếu đến bảng User
     },
     answers: [
       {
-        Question_id: String,
+        question_id: String,
         results: Array,
       },
     ], // Mảng chứa câu trả lời của người dùng
@@ -23,5 +23,5 @@ const AnswersSchema = new mongoose.Schema(
   }
 );
 
-const Answers = mongoose.model("Answers", AnswersSchema, "answers");
-module.exports = Answers;
+const Answer = mongoose.model("Answer", AnswerSchema, "answers");
+module.exports = Answer;

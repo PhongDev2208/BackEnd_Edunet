@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const CategoriesSchema = new mongoose.Schema(
+const CategorySchema = new mongoose.Schema(
   {
     name: String,
     description: String,
@@ -12,17 +12,17 @@ const CategoriesSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    created_At: String,
-    Created_by: String,
+    created_at: String,
+    created_by: String,
     deleted_at: String,
     deleted_by: String,
     updated_at: String,
-    updated_By: String,
+    updated_by: String,
   },
   {
     timestamps: true,
   }
 );
 
-const Categories = mongoose.model("Categories", CategoriesSchema, "Categories");
-module.exports = Categories;
+const Category = mongoose.model("Category", CategorySchema, "categories");
+module.exports = Category;

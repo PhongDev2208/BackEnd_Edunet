@@ -77,7 +77,7 @@ module.exports.Post = async (req, res) => {
       phone: Phone,
       role_id: "st",
       deleted: true,
-      createdat: helper.timenow(),
+      created_at: helper.timenow(),
     };
     const savedUser = new User(dataUser);
     await savedUser.save();

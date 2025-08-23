@@ -1,83 +1,80 @@
 const mongoose = require("mongoose");
-const slug = require('mongoose-slug-updater')
-mongoose.plugin(slug)
+const slug = require("mongoose-slug-updater");
+mongoose.plugin(slug);
 
 const CourseSchema = new mongoose.Schema({
-
   title: {
     type: String,
-    required: true
+    required: true,
   },
   slug: {
-    type : String,
-    slug : "title",
-    unique : true
+    type: String,
+    slug: "title",
+    unique: true,
   },
   description: String,
-  Goal : String,
-  schedule : [],
-  time: 
-    {
-      start_time : Date,
-      end_time : Date,
-      startDisplay : String,
-      EndDisplay : String,
-      daysOfWeek : [
-        {
-          Day : Number,
-          hourstart : Number,
-          hourend : Number
-        }-
-      ]
-    }
-  ,
+  goal: String,
+  schedule: [],
+  time: {
+    start_time: Date,
+    end_time: Date,
+    start_display: String,
+    end_display: String,
+    days_of_week: [
+      {
+        day: Number,
+        hour_start: Number,
+        hour_end: Number,
+      },
+    ],
+  },
   numberlesson: {
     type: Number,
-    required: true
+    required: true,
   },
   public: {
-    display : String,
-    time : Date
+    display: String,
+    time: Date,
   },
   rate: {
     type: Number,
-    default: 0
+    default: 0,
   },
   categoryid: {
     type: String,
-    required: true
+    required: true,
   },
-  SEO: {
+  seo: {
     type: Number,
-    default : 0
+    default: 0,
   },
 
   status: {
     type: Number,
-    default : 1
+    default: 1,
   },
-  status_course : {
+  status_course: {
     type: Number,
-    default : 1
-  }, 
+    default: 1,
+  },
   img: [], // Array of strings for image URLs or paths
   price: Number,
-  teacherId: {
+  teacherid: {
     type: String,
-    required: true
+    required: true,
   },
   deleted: {
-    type : Boolean,
-    default : false
- },   
-  Quantity : Number,
+    type: Boolean,
+    default: false,
+  },
+  quantity: Number,
   deleted_at: String,
   deleted_by: String,
   updated_by: String,
   updated_at: String,
   created_by: String,
-  created_at: String
+  created_at: String,
 });
 
-const Course = mongoose.model("Course", CourseSchema, "Course");
+const Course = mongoose.model("Course", CourseSchema, "courses");
 module.exports = Course;

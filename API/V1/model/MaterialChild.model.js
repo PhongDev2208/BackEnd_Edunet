@@ -8,7 +8,7 @@ const MaterialChildSchema = new mongoose.Schema({
   },
   position: { type: Number },
   file: { type: Array, default: null },
-  Link: { type: String, default: null },
+  link: { type: String, default: null },
   created_at: { type: String },
   deleted_at: { type: String },
   deleted_by: { type: String },

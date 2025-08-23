@@ -1,4 +1,4 @@
-const Answers = require("../model/answers.model.js");
+const Answers = require("../model/answer.model.js");
 const Question = require("../model/question.model.js");
 const mongoose = require("mongoose");
 
@@ -18,7 +18,7 @@ module.exports.GetAll = async (req, res) => {
     }
     const dataAnswers = await Answers.find({
       topic_id: key,
-      userid_id: req.user.userid,
+      userid: req.user.userid,
     }).select("-answers");
     return res.json({
       status: true,
@@ -64,7 +64,7 @@ module.exports.Detail = async (req, res) => {
     const dataCustom = await Promise.all(
       dataAnswers.answers.map(async (item) => {
         const questionData = await Question.findOne({
-          _id: item.Question_id,
+          _id: item.question_id,
         }).lean();
 
         questionData.answersuser = item.results;
@@ -110,7 +110,7 @@ module.exports.Post = async (req, res) => {
       });
     }
     const data = {
-      userid_id: req.user.userid,
+      userid: req.user.userid,
       answers: answers,
       topic_id: topic_id,
       date: helper.timenow(),

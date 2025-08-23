@@ -1,0 +1,25 @@
+const categoryRoutes = require("./category.router");
+const courseRoutes = require("./course.router");
+const studentCourseRoutes = require("./studentCourse.router");
+const reviewRoutes = require("./review.router");
+const topicRoutes = require("./topic.router");
+const questionRoutes = require("./question.router");
+const answerRoutes = require("./answers.router");
+const userRoutes = require("./user.router");
+const assignmentRoutes = require("./assignment.router");
+const submitRoutes = require("./submit.router");
+const materialRoutes = require("./material.router");
+module.exports = (app) => {
+  const system = "/api/v1";
+  app.use(system + "/categories", categoryRoutes);
+  app.use(system + "/courses", courseRoutes);
+  app.use(system + "/studentcourses", studentCourseRoutes);
+  app.use(system + "/reviews", reviewRoutes);
+  app.use(system + "/topics", topicRoutes);
+  app.use(system + "/questions", questionRoutes);
+  app.use(system + "/answers", answerRoutes);
+  app.use(system + "/users", userRoutes);
+  app.use(system + "/assignments", assignmentRoutes);
+  app.use(system + "/submits", submitRoutes);
+  app.use(system + "/materials", materialRoutes);
+};
