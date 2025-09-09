@@ -5,21 +5,21 @@ const authenticationStudent = require("../middleware/authenticationStudent");
 const authenticationTeacher = require("../middleware/authenticationTeacher");
 const checkoverlapping = require("../middleware/checkoverlapping ");
 router.get(
-  "/Getstudentcourse",
+  "/get-student-course",
   authenticationStudent,
   controller.GetstudentCourse
 );
-router.get("/GetStudent/:id", authenticationStudent, controller.GetStudent);
+router.get("/get-student/:id", authenticationStudent, controller.GetStudent);
 router.get(
-  "/GetscheduleStudent",
+  "/get-schedule-student",
   authenticationStudent,
   controller.GetscheduleStudent
 );
 router.post(
-  "/registerstudencourse",
+  "/register-studen-course",
   authenticationStudent,
   checkoverlapping,
   controller.registerstudencourse
 );
-router.patch("/editstatus", authenticationTeacher, controller.editstatus);
+router.patch("/edit-status", authenticationTeacher, controller.editstatus);
 module.exports = router;

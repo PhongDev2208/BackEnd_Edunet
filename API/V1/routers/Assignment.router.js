@@ -4,8 +4,8 @@ const controller = require("../controller/Assignment.controller");
 const authenticationTeacher = require("../middleware/authenticationTeacher");
 const authenticationStudent = require("../middleware/authenticationStudent");
 
-router.get("/Getall/:id", authenticationStudent, controller.GetAll);
-router.get("/GetDetail/:id", authenticationStudent, controller.GetDetail);
-router.post("/Post", authenticationTeacher, controller.Post);
+router.get("/get-all/:id", authenticationStudent, controller.GetAll);
+router.get("/get-detail/:id", authenticationStudent, controller.GetDetail);
+router.post("/post", authenticationTeacher, controller.Post);
 
 module.exports = router;
