@@ -55,7 +55,7 @@ module.exports.Post = async (req, res) => {
 module.exports.PostChildren = async (req, res) => {
   try {
     const { resource_id, title, link, position, file } = req.body;
-    const requiredFields = ["resource_id", "title", "link", "position", "file"];
+    const requiredFields = ["resource_id", "title", "position", "file"];
     const respondValidate = validate.isValidRequest(req.body, requiredFields);
     if (respondValidate == false) {
       return res.json({

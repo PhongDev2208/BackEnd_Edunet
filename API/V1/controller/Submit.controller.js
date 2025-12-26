@@ -70,11 +70,9 @@ module.exports.GetAll = async (req, res) => {
       const userId = await User.findOne({
         _id: item.user_id,
       }).select("_id");
-      const dataUser = await student
-        .findOne({
-          user_id: userId._id,
-        })
-        .select("name");
+      const dataUser = await Student.findOne({
+        user_id: userId._id,
+      }).select("name");
       item.name = dataUser.name;
     }
 

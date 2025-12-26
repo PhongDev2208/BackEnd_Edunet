@@ -18,6 +18,6 @@ const MaterialChildSchema = new mongoose.Schema({
 });
 
 // Tạo model
-const MaterialChild = mongoose.model("MaterialChild", MaterialChildSchema);
+const MaterialChild = mongoose.model("MaterialChild", MaterialChildSchema, "materialchilds");
 
 module.exports = MaterialChild;

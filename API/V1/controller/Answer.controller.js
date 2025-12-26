@@ -18,7 +18,7 @@ module.exports.GetAll = async (req, res) => {
     }
     const dataAnswers = await Answers.find({
       topic_id: key,
-      userid: req.user.userid,
+      userid: req.user.userId,
     }).select("-answers");
     return res.json({
       status: true,
@@ -110,7 +110,7 @@ module.exports.Post = async (req, res) => {
       });
     }
     const data = {
-      userid: req.user.userid,
+      userid: req.user.userId,
       answers: answers,
       topic_id: topic_id,
       date: helper.timenow(),
